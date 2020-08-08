@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+.business-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.search-input {
+  flex: auto;
+  max-width: 610px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

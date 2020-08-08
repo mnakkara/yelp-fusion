@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import YelpBusinesses from './components/YelpBusinesses';
 import './App.css';
+import YelpSeach from './components/YelpSeach';
 
 function App() {
+  const [searchStr, setSearchStr] = useState('Alpharetta GA');
+  function onSearch(val: string) {
+    setSearchStr(val);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header>
+        <h1>Top 5 Ice Creams!</h1>
       </header>
+      <YelpSeach searchStr={searchStr} onSearch={onSearch}></YelpSeach>
+      <YelpBusinesses searchStr={searchStr}></YelpBusinesses>
     </div>
   );
 }
